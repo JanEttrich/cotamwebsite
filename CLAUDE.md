@@ -11,3 +11,6 @@
 ## Technical Constraints
 - **Output:** Mobile-first, semantic HTML5, clean CSS custom properties.
 - **Frameworks:** Avoid heavy UI kits unless explicitly requested.
+
+## Version Control
+- Do not automatically commit and push changes to Github

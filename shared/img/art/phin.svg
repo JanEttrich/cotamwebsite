@@ -41,7 +41,7 @@
   <!-- leaves -->
   <g fill="#7A8040">
     <path d="M440 520 q60 -40 90 -120 q-80 30 -90 120 z"/>
-    <path d="M150 530 q-70 -20 -100 -90 q80 10 100 90 z" fill="#5C5C34"/>
+    <path d="M150 530 q-70 -20 -100 -90 q80 10 100 90 z" fill="#8E9A4C"/>
   </g>
   <path d="M440 520 q34 -50 82 -110" stroke="#5C5C34" stroke-width="3" fill="none"/>
 </svg>
