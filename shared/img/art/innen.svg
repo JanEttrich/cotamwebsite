@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t">
+  <title id="t">Illustration: Gastraum mit Laternen, Nón-lá-Hüten an der Wand und gedeckten Tischen</title>
+  <defs>
+    <radialGradient id="lamp" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#F6D58C" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#F6D58C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="#E3E4CC"/>
+  <!-- wainscot -->
+  <rect y="360" width="800" height="240" fill="#5C5C34"/>
+  <g stroke="#4D4D2B" stroke-width="3">
+    <path d="M0 380 H800"/><path d="M80 380 V600 M200 380 V600 M320 380 V600 M440 380 V600 M560 380 V600 M680 380 V600"/>
+  </g>
+  <!-- conical hats on the wall -->
+  <g>
+    <g transform="translate(150 190)"><path d="M-62 30 L0 -36 L62 30 Q0 44 -62 30 Z" fill="#D8C79A"/><path d="M0 -36 L-40 32 M0 -36 L-18 36 M0 -36 L4 37 M0 -36 L26 35 M0 -36 L46 31" stroke="#B9A776" stroke-width="2"/></g>
+    <g transform="translate(300 150) scale(.8)"><path d="M-62 30 L0 -36 L62 30 Q0 44 -62 30 Z" fill="#D8C79A"/><path d="M0 -36 L-40 32 M0 -36 L-18 36 M0 -36 L4 37 M0 -36 L26 35 M0 -36 L46 31" stroke="#B9A776" stroke-width="2"/></g>
+    <g transform="translate(250 255) scale(.65)"><path d="M-62 30 L0 -36 L62 30 Q0 44 -62 30 Z" fill="#6B231A"/></g>
+  </g>
+  <!-- framed picture: rice field -->
+  <g transform="translate(520 120)">
+    <rect width="180" height="130" fill="#F3F1E4" stroke="#6B231A" stroke-width="8"/>
+    <path d="M8 90 Q60 70 100 86 T172 80 V122 H8 Z" fill="#9AA45A"/>
+    <path d="M8 104 Q70 90 120 102 T172 98 V122 H8 Z" fill="#7A8040"/>
+    <circle cx="130" cy="40" r="14" fill="#E9B45C"/>
+    <path d="M40 80 l12 -14 l12 14 z" fill="#5C5C34"/>
+  </g>
+  <!-- hanging lanterns -->
+  <g>
+    <circle cx="200" cy="330" r="110" fill="url(#lamp)"/>
+    <circle cx="600" cy="330" r="110" fill="url(#lamp)"/>
+    <line x1="200" y1="0" x2="200" y2="296" stroke="#3A3A20" stroke-width="2"/>
+    <ellipse cx="200" cy="322" rx="28" ry="32" fill="#6B231A"/><rect x="186" y="288" width="28" height="7" fill="#C9A15B"/><rect x="186" y="350" width="28" height="7" fill="#C9A15B"/><path d="M200 357 v22" stroke="#C9A15B" stroke-width="4"/>
+    <line x1="600" y1="0" x2="600" y2="296" stroke="#3A3A20" stroke-width="2"/>
+    <ellipse cx="600" cy="322" rx="28" ry="32" fill="#6B231A"/><rect x="586" y="288" width="28" height="7" fill="#C9A15B"/><rect x="586" y="350" width="28" height="7" fill="#C9A15B"/><path d="M600 357 v22" stroke="#C9A15B" stroke-width="4"/>
+    <line x1="400" y1="0" x2="400" y2="70" stroke="#3A3A20" stroke-width="2"/>
+    <ellipse cx="400" cy="92" rx="20" ry="24" fill="#E9B45C"/><rect x="390" y="66" width="20" height="5" fill="#6B231A"/><rect x="390" y="113" width="20" height="5" fill="#6B231A"/>
+  </g>
+  <!-- tables -->
+  <g>
+    <rect x="110" y="440" width="200" height="14" rx="3" fill="#8A6A45"/>
+    <rect x="130" y="454" width="10" height="120" fill="#6E5235"/><rect x="280" y="454" width="10" height="120" fill="#6E5235"/>
+    <rect x="490" y="440" width="200" height="14" rx="3" fill="#8A6A45"/>
+    <rect x="510" y="454" width="10" height="120" fill="#6E5235"/><rect x="660" y="454" width="10" height="120" fill="#6E5235"/>
+  </g>
+  <!-- bowls, chopsticks, plant -->
+  <g fill="#F3F1E4">
+    <path d="M150 440 a24 16 0 0 1 48 0 z" transform="rotate(180 174 440)"/>
+    <path d="M226 440 a24 16 0 0 1 48 0 z" transform="rotate(180 250 440)"/>
+    <path d="M540 440 a24 16 0 0 1 48 0 z" transform="rotate(180 564 440)"/>
+  </g>
+  <g fill="#6B231A"><rect x="150" y="452" width="48" height="3" opacity="0"/></g>
+  <path d="M190 420 l18 -26 M196 422 l18 -26 M580 420 l18 -26" stroke="#3A3A20" stroke-width="3" stroke-linecap="round"/>
+  <path d="M174 420 q-4 -10 2 -20 M250 420 q-4 -10 2 -20 M564 420 q-4 -10 2 -20" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity=".9"/>
+  <g transform="translate(650 440)">
+    <path d="M-14 0 h28 l-4 -22 h-20 z" fill="#6B231A"/>
+    <path d="M0 -22 q-18 -16 -12 -46 q14 20 12 46 q4 -32 22 -48 q2 30 -22 48" fill="#7A8040"/>
+  </g>
+  <!-- stools -->
+  <g fill="#6B231A">
+    <path d="M70 500 h50 l-8 74 h-8 l-5 -54 h-8 l-5 54 h-8 z"/>
+    <path d="M300 500 h50 l-8 74 h-8 l-5 -54 h-8 l-5 54 h-8 z"/>
+    <path d="M450 500 h50 l-8 74 h-8 l-5 -54 h-8 l-5 54 h-8 z"/>
+    <path d="M680 500 h50 l-8 74 h-8 l-5 -54 h-8 l-5 54 h-8 z"/>
+  </g>
+  <rect y="574" width="800" height="26" fill="#3F3F22"/>
+</svg>

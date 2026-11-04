@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="t">
+  <title id="t">Illustration: Vietnamesischer Kaffee – Phin-Filter tropft auf Eis und Kondensmilch</title>
+  <defs>
+    <linearGradient id="coffee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5A3520"/>
+      <stop offset="1" stop-color="#3A2014"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8E8F86"/>
+      <stop offset=".45" stop-color="#E6E6DF"/>
+      <stop offset="1" stop-color="#9C9D94"/>
+    </linearGradient>
+    <clipPath id="glass"><path d="M190 250 H410 L392 540 H208 Z"/></clipPath>
+  </defs>
+  <circle cx="300" cy="320" r="250" fill="#E7E8D6"/>
+  <!-- glass contents -->
+  <g clip-path="url(#glass)">
+    <rect x="180" y="250" width="240" height="300" fill="#F7F5EC" opacity=".55"/>
+    <rect x="180" y="330" width="240" height="160" fill="url(#coffee)"/>
+    <path d="M180 470 Q240 450 300 470 T420 466 V560 H180 Z" fill="#EBD9B4"/>
+    <g fill="#FFFFFF" opacity=".35" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="2">
+      <rect x="215" y="300" width="56" height="50" rx="8" transform="rotate(-12 243 325)"/>
+      <rect x="292" y="290" width="58" height="54" rx="8" transform="rotate(10 321 317)"/>
+      <rect x="250" y="360" width="56" height="50" rx="8" transform="rotate(6 278 385)"/>
+      <rect x="320" y="370" width="52" height="48" rx="8" transform="rotate(-8 346 394)"/>
+    </g>
+  </g>
+  <path d="M190 250 H410 L392 540 H208 Z" fill="none" stroke="#5C5C34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M206 268 L222 520" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity=".6"/>
+  <!-- phin filter -->
+  <g>
+    <rect x="232" y="232" width="136" height="14" rx="4" fill="url(#metal)"/>
+    <path d="M250 232 L258 120 H342 L350 232 Z" fill="url(#metal)"/>
+    <rect x="248" y="108" width="104" height="16" rx="6" fill="url(#metal)"/>
+    <rect x="290" y="96" width="20" height="14" rx="4" fill="#8E8F86"/>
+    <g fill="#7A7B72" opacity=".5"><circle cx="280" cy="180" r="3"/><circle cx="300" cy="190" r="3"/><circle cx="320" cy="180" r="3"/></g>
+  </g>
+  <!-- drip -->
+  <path d="M300 246 v40" stroke="#4A2A18" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300 296 q-7 12 0 18 q7 -6 0 -18 z" fill="#4A2A18"/>
+  <!-- leaves -->
+  <g fill="#7A8040">
+    <path d="M440 520 q60 -40 90 -120 q-80 30 -90 120 z"/>
+    <path d="M150 530 q-70 -20 -100 -90 q80 10 100 90 z" fill="#5C5C34"/>
+  </g>
+  <path d="M440 520 q34 -50 82 -110" stroke="#5C5C34" stroke-width="3" fill="none"/>
+</svg>

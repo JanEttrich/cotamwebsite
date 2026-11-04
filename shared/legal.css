@@ -1,0 +1,17 @@
+/* Neutrales Layout für Impressum & Datenschutz (wird nach der Designwahl angepasst). */
+:root { --olive: #5C5C34; --oxblood: #6B231A; --paper: #F7F7F0; --ink: #26261A; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.7 'Be Vietnam Pro', system-ui, sans-serif; }
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+.back { display: inline-flex; align-items: center; gap: .6rem; color: var(--olive); font-weight: 600; text-decoration: none; margin-bottom: 2.5rem; }
+.back::before {
+  content: ''; width: 2.5rem; aspect-ratio: 1; background: var(--olive);
+  -webkit-mask: url('img/brand/logo-weiss.webp') center / contain no-repeat; mask: url('img/brand/logo-weiss.webp') center / contain no-repeat;
+}
+h1 { font: 800 clamp(2.2rem, 6vw, 3.2rem)/1 'Phudu', sans-serif; color: var(--olive); margin: 0 0 2rem; }
+h2 { font-size: 1.2rem; margin: 2.5rem 0 .5rem; color: var(--olive); }
+p, ul { margin: 0 0 1em; }
+a { color: var(--oxblood); text-underline-offset: .2em; }
+.todo { background: #FFF1B8; padding: 0 .3em; border-radius: 3px; font-style: italic; }
+.hint { border-left: 4px solid var(--oxblood); padding: .75rem 1rem; background: #fff; font-size: .95rem; margin-bottom: 2rem; }
+:focus-visible { outline: 3px solid var(--oxblood); outline-offset: 3px; }

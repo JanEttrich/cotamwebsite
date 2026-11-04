@@ -1,0 +1,161 @@
+/* Design B – "Đêm Sài Gòn": Schwarz & Lack-Rot, Laternenlicht. Alegreya + Alegreya Sans. */
+:root {
+  --black: #000000;
+  --night: #120B09;
+  --lacquer: #6B231A;
+  --lantern: #E0614A;   /* hellere Variante des Logo-Rots für Text auf Schwarz (Kontrast > 5:1) */
+  --rice: #F2EADF;
+  --muted: #B3A99B;
+  --gold: #D3AE68;
+
+  --serif: 'Alegreya', Georgia, serif;
+  --sans: 'Alegreya Sans', system-ui, sans-serif;
+
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --max: 70rem;
+  --logo: url('../shared/img/brand/logo-weiss.webp');
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--black); color: var(--rice); font: 400 1.125rem/1.6 var(--sans); }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; line-height: 1.1; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--rice); color: var(--black); padding: .75rem 1rem; z-index: 10; }
+.skip:focus { left: 1rem; }
+
+/* Ankündigung */
+.notice { background: var(--lacquer); text-align: center; padding: .7rem var(--gutter); font-size: 1rem; }
+.notice p { margin: 0 auto; max-width: 62ch; }
+
+/* Navigation */
+.top { padding: 1rem var(--gutter); }
+.top ul { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 1.75rem; list-style: none; margin: 0; padding: 0; font-size: 1rem; letter-spacing: .02em; }
+.top a { text-decoration: none; color: var(--muted); padding: .4rem 0; }
+.top a:hover { color: var(--rice); }
+
+/* Hero */
+.hero { text-align: center; padding: 1.5rem var(--gutter) 5rem; display: grid; justify-items: center; }
+.hero-logo {
+  width: clamp(7.5rem, 18vw, 11rem); aspect-ratio: 1; background: var(--rice);
+  -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat;
+}
+.hero h1 {
+  font-style: italic; font-size: clamp(1.9rem, 5vw, 3.4rem); max-width: 22ch; margin: 2rem 0 0;
+  text-wrap: balance;
+}
+
+.spot { position: relative; width: min(92vw, 36rem); margin: 1.5rem 0 1rem; }
+.spot::before {
+  content: ''; position: absolute; inset: -18% -30%; z-index: 0;
+  background: radial-gradient(closest-side, rgb(233 170 92 / .38), rgb(107 35 26 / .22) 55%, transparent 100%);
+}
+.spot img { position: relative; z-index: 1; width: 100%; margin-top: 18%; filter: drop-shadow(0 30px 40px rgb(0 0 0 / .8)); }
+.steam {
+  position: absolute; z-index: 2; left: 50%; top: 0; width: 34%; transform: translateX(-50%);
+  fill: none; stroke: rgb(242 234 223 / .55); stroke-width: 3; stroke-linecap: round;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .steam path { stroke-dasharray: 60 200; animation: rise 4.5s ease-in-out infinite; }
+  .steam path:nth-child(2) { animation-delay: -1.5s; }
+  .steam path:nth-child(3) { animation-delay: -3s; }
+  @keyframes rise { from { stroke-dashoffset: 0; opacity: 0; } 30% { opacity: 1; } to { stroke-dashoffset: -260; opacity: 0; } }
+}
+
+.status { color: var(--muted); font-size: 1.05rem; margin: 0 0 1.5rem; }
+.status [data-status-text] { color: var(--rice); font-weight: 700; }
+.status[data-state="open"] [data-status-text] { color: #9BCB6B; }
+.status[data-state="pause"] [data-status-text] { color: var(--gold); }
+.status[data-state="closed"] [data-status-text] { color: var(--lantern); }
+
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+.btn {
+  display: inline-flex; align-items: center; min-height: 3rem; padding: .7rem 1.5rem;
+  font: 500 1.05rem/1 var(--sans); text-decoration: none; border-radius: 2px; transition: background-color .2s, color .2s;
+}
+.btn-lantern { background: var(--lacquer); color: var(--rice); box-shadow: inset 0 0 0 1px rgb(224 97 74 / .5); }
+.btn-lantern:hover { background: #82301f; }
+.btn-ghost { box-shadow: inset 0 0 0 1px var(--muted); }
+.btn-ghost:hover { background: var(--rice); color: var(--black); }
+.btn-rice { background: var(--rice); color: var(--lacquer); font-weight: 700; }
+.btn-rice:hover { background: #fff; }
+.link { color: var(--lantern); text-underline-offset: .2em; }
+[data-missing] { color: var(--muted); font-style: italic; }
+
+/* Geschichte */
+.story { max-width: 40rem; margin: 0 auto; padding: 2rem var(--gutter) 6rem; text-align: center; }
+.story h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--gold); margin-bottom: 1.25rem; }
+.story > p { color: var(--muted); }
+.story blockquote { margin: 3rem 0 0; }
+.story blockquote p { font: italic 400 clamp(1.8rem, 4.5vw, 2.8rem)/1.2 var(--serif); margin-bottom: .75rem; text-wrap: balance; }
+.story blockquote footer { color: var(--muted); font-size: .95rem; }
+
+/* Gerichte */
+.dishes { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 6rem; }
+.dishes > h2, .place > h2, .visit > h2 { font-size: clamp(2rem, 5vw, 3.2rem); text-align: center; margin-bottom: 3rem; }
+.dish-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 3.5rem 2.5rem; }
+.dish { text-align: center; }
+.dish img {
+  height: 13rem; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 18px 24px rgb(0 0 0 / .9));
+  background: radial-gradient(closest-side, rgb(233 170 92 / .22), transparent);
+}
+.dish h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: .5rem; }
+.dish p { color: var(--muted); max-width: 32ch; margin-inline: auto; }
+.veg { text-align: center; margin-top: 3rem; color: var(--muted); }
+
+/* Matcha & Kaffee */
+.bar {
+  border-top: 1px solid rgb(179 169 155 / .25); border-bottom: 1px solid rgb(179 169 155 / .25);
+  padding: 5rem var(--gutter); display: grid; gap: 3rem; align-items: center;
+  max-width: var(--max); margin: 0 auto;
+}
+.bar h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-style: italic; margin-bottom: 1rem; }
+.bar p { color: var(--muted); max-width: 44ch; }
+.glasses { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; align-items: end; }
+.glasses li { display: grid; justify-items: center; gap: .75rem; font-size: .95rem; color: var(--muted); text-align: center; }
+.glasses img { height: clamp(8rem, 22vw, 15rem); width: auto; filter: drop-shadow(0 14px 18px rgb(0 0 0 / .9)); }
+
+/* Speisekarte */
+.menu { background: var(--lacquer); padding: 5.5rem var(--gutter); }
+.menu-inner { max-width: 52rem; margin: 0 auto; }
+.menu h2 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); margin-bottom: .75rem; }
+.menu-intro { margin-bottom: 2.5rem; }
+.menu-cats { display: grid; gap: 0 3rem; margin: 0 0 2.5rem; }
+.menu-cats div { padding: 1rem 0; border-top: 1px solid rgb(242 234 223 / .3); }
+.menu-cats dt { font: 700 1.3rem/1.2 var(--serif); margin-bottom: .2rem; }
+.menu-cats dd { margin: 0; color: #E8CFC6; }
+
+/* Bistro */
+.place { max-width: var(--max); margin: 0 auto; padding: 6rem var(--gutter); }
+.place-grid { display: grid; gap: 2rem; }
+.place figure { margin: 0; }
+.place img { width: 100%; filter: brightness(.86); outline: 1px solid rgb(211 174 104 / .5); outline-offset: 8px; }
+.place figcaption { margin-top: 1.25rem; color: var(--muted); font-size: .95rem; text-align: center; }
+
+/* Besuch */
+.visit { background: var(--night); padding: 6rem var(--gutter); }
+.visit-grid { display: grid; gap: 2.5rem; max-width: var(--max); margin: 0 auto; }
+.visit h3 { font: 700 1.3rem/1.2 var(--serif); color: var(--gold); margin-bottom: 1rem; }
+.hours { margin: 0; }
+.hours-row { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; padding: .6rem 0; border-bottom: 1px solid rgb(179 169 155 / .2); }
+.hours-row dd { margin: 0; display: grid; text-align: right; font-variant-numeric: tabular-nums; }
+.hours-row[data-today] dt { color: var(--lantern); font-weight: 700; }
+.hours-row[data-today] dt::after { content: ' (heute)'; font-weight: 400; }
+.hours-row[data-closed] dd { color: var(--muted); font-style: italic; }
+.small { font-size: .95rem; color: var(--muted); margin-top: 1rem; }
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding: 2rem var(--gutter); color: var(--muted); font-size: .95rem; border-top: 1px solid rgb(179 169 155 / .2); }
+.foot p { margin: 0; }
+.foot ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+
+@media (min-width: 48rem) {
+  .bar { grid-template-columns: 1fr 1.3fr; }
+  .menu-cats { grid-template-columns: 1fr 1fr; }
+  .place-grid { grid-template-columns: 1fr 1fr; }
+  .visit-grid { grid-template-columns: 1.3fr 1fr 1fr; }
+}

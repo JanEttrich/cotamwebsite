@@ -1,0 +1,165 @@
+/* Design C – "Phin": Ochsenblut-Hero mit Sticker-Collage, helle Mitte, schwarzer Fuß.
+   Bricolage Grotesque (Display) + Literata (Text). */
+:root {
+  --oxblood: #6B231A;
+  --oxblood-deep: #4E1912;
+  --olive: #5C5C34;
+  --milk: #FBFAF6;
+  --condensed: #EFE0C2;
+  --ink: #221C18;
+  --black: #000000;
+  --stone: #6A625A;
+
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --text: 'Literata', Georgia, serif;
+
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+  --max: 74rem;
+  --logo: url('../shared/img/brand/logo-weiss.webp');
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--milk); color: var(--ink); font: 400 1.0625rem/1.7 var(--text); }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--olive); outline-offset: 3px; }
+.hero :focus-visible, .foot :focus-visible { outline-color: var(--condensed); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--milk); padding: .75rem 1rem; z-index: 10; }
+.skip:focus { left: 1rem; }
+
+.notice { background: var(--olive); color: var(--milk); text-align: center; padding: .7rem var(--gutter); font-size: .95rem; }
+.notice p { margin: 0 auto; max-width: 62ch; }
+
+.mark {
+  display: inline-block; width: 3.25rem; aspect-ratio: 1; background: var(--milk);
+  -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat;
+}
+
+/* ---------- Hero ---------- */
+.hero { background: var(--oxblood); color: var(--milk); overflow: hidden; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: var(--max); margin: 0 auto; padding: 1rem var(--gutter); }
+.top ul { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; list-style: none; margin: 0; padding: 0; font: 600 1rem/1 var(--display); }
+.top a { text-decoration: none; padding: .5rem 0; display: inline-block; }
+.top a:hover { text-decoration: underline; text-underline-offset: .3em; }
+
+.hero-body { display: grid; gap: 1rem; max-width: var(--max); margin: 0 auto; padding: 2rem var(--gutter) 0; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: .98; max-width: 13ch; text-wrap: balance; margin-bottom: 1.5rem; }
+.lede { max-width: 40ch; color: #F3E3DC; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.75rem 0 1.25rem; }
+.btn {
+  display: inline-flex; align-items: center; min-height: 3rem; padding: .7rem 1.4rem; border-radius: 10px;
+  font: 700 1rem/1 var(--display); text-decoration: none; transition: transform .15s, background-color .2s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-milk { background: var(--condensed); color: var(--oxblood); }
+.btn-milk:hover { background: #fff; }
+.btn-outline { box-shadow: inset 0 0 0 2px var(--condensed); color: var(--milk); }
+.btn-outline:hover { background: rgb(255 255 255 / .1); }
+.btn-red { background: var(--oxblood); color: var(--milk); }
+.btn-red:hover { background: var(--oxblood-deep); }
+
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .5rem; font-size: .95rem; color: #F3E3DC; }
+.status [data-status-text] { font: 700 1rem/1 var(--display); color: var(--milk); }
+.status .dot { width: .65rem; height: .65rem; border-radius: 50%; background: var(--condensed); }
+.status[data-state="open"] .dot { background: #9BD36A; }
+.status[data-state="pause"] .dot { background: #F0C46A; }
+.status[data-state="closed"] .dot { background: #B9A8A2; }
+
+/* Sticker-Collage: freigestellte Gerichte mit weißem Rand, leicht gedreht */
+.stickers { position: relative; height: clamp(22rem, 70vw, 34rem); margin: 1rem calc(var(--gutter) * -0.5) -3rem; }
+.stickers img {
+  position: absolute;
+  filter: drop-shadow(0 0 0 #fff) drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 18px 18px rgb(0 0 0 / .35));
+}
+.s1 { width: 70%; left: 14%; top: 16%; transform: rotate(-6deg); z-index: 2; }
+.s2 { width: 58%; left: -2%; top: 0; transform: rotate(-14deg); z-index: 1; }
+.s3 { height: 64%; width: auto; right: 2%; top: 2%; transform: rotate(9deg); z-index: 3; }
+.s4 { width: 32%; left: 2%; bottom: 8%; transform: rotate(8deg); z-index: 3; }
+@media (prefers-reduced-motion: no-preference) {
+  .stickers img { animation: stick .7s cubic-bezier(.3, 1.4, .5, 1) both; }
+  .s2 { animation-delay: .1s; } .s1 { animation-delay: .25s; } .s3 { animation-delay: .4s; } .s4 { animation-delay: .55s; }
+  @keyframes stick { from { opacity: 0; scale: 1.25; } }
+}
+
+/* ---------- Klassiker ---------- */
+.classics { padding: 6rem 0 4rem; }
+.classics-head { max-width: var(--max); margin: 0 auto 2rem; padding: 0 var(--gutter); }
+.classics h2 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--oxblood); margin-bottom: .75rem; }
+.classics-head p { color: var(--stone); }
+.strip {
+  list-style: none; margin: 0; padding: 1rem var(--gutter) 2rem;
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(15rem, 19rem); gap: 1.25rem;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+  scrollbar-color: var(--oxblood) transparent;
+}
+.strip li { scroll-snap-align: start; background: #fff; border-radius: 22px 22px 22px 4px; padding: 1.25rem 1.25rem 1.5rem; box-shadow: 0 1px 0 rgb(34 28 24 / .08); }
+.strip img { height: 11rem; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto 1rem; }
+.strip h3 { font-size: 1.6rem; color: var(--oxblood); margin-bottom: .4rem; }
+.strip p { font-size: .95rem; color: var(--stone); margin: 0; }
+
+/* ---------- Suppe ---------- */
+.soup {
+  background: var(--olive); color: var(--milk);
+  display: grid; gap: 2rem; align-items: center;
+  padding: 5rem max(var(--gutter), calc((100% - var(--max)) / 2));
+}
+.soup img { width: min(100%, 28rem); margin-inline: auto; filter: drop-shadow(0 24px 30px rgb(0 0 0 / .35)); }
+.soup h2 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); margin-bottom: 1.25rem; }
+.soup-quote { font-style: italic; font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.6; max-width: 42ch; }
+
+/* ---------- Getränke ---------- */
+.drinks {
+  background: var(--condensed);
+  display: grid; gap: 2rem; align-items: center;
+  padding: 5rem max(var(--gutter), calc((100% - var(--max)) / 2));
+}
+.drinks h2 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--oxblood); margin-bottom: 1.25rem; }
+.drinks p { max-width: 44ch; }
+.drinks-art { position: relative; display: flex; justify-content: center; align-items: end; }
+.drinks-art .phin { width: min(70%, 20rem); }
+.drinks-art .glass { height: clamp(12rem, 30vw, 18rem); width: auto; margin-left: -12%; filter: drop-shadow(0 16px 16px rgb(0 0 0 / .25)); }
+
+/* ---------- Speisekarte ---------- */
+.menu { max-width: 52rem; margin: 0 auto; padding: 6rem var(--gutter); text-align: center; }
+.menu h2 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--oxblood); margin-bottom: 1rem; }
+.tags { list-style: none; padding: 0; margin: 2rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+.tags li { font: 600 1rem/1 var(--display); padding: .7rem 1.1rem; border-radius: 99px; background: #fff; box-shadow: inset 0 0 0 1.5px rgb(107 35 26 / .35); }
+.veg { color: var(--stone); }
+
+/* ---------- Bistro ---------- */
+.place { display: grid; gap: 1.5rem; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 6rem; }
+.place figure { margin: 0; }
+.place img { width: 100%; border-radius: 22px 22px 22px 4px; }
+.place figcaption { margin-top: .6rem; font-size: .9rem; color: var(--stone); }
+
+/* ---------- Fuß ---------- */
+.foot { background: var(--black); color: var(--milk); padding: 5rem max(var(--gutter), calc((100% - var(--max)) / 2)) 2rem; }
+.foot-grid { display: grid; gap: 2.5rem; margin-bottom: 4rem; }
+.foot h2 { font-size: 1.5rem; color: var(--condensed); margin-bottom: 1rem; letter-spacing: 0; }
+.hours { margin: 0; }
+.hours-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: .55rem 0; border-bottom: 1px solid rgb(251 250 246 / .18); }
+.hours-row dd { margin: 0; display: grid; text-align: right; font-variant-numeric: tabular-nums; }
+.hours-row[data-today] dt { font-weight: 600; }
+.hours-row[data-today] dt::after { content: ' (heute)'; color: var(--condensed); font-weight: 400; }
+.hours-row[data-closed] dd { font-style: italic; opacity: .75; }
+.small { font-size: .9rem; opacity: .75; margin-top: 1rem; }
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.foot a { text-underline-offset: .2em; }
+[data-missing] { opacity: .65; font-style: italic; }
+.foot-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding-top: 2rem; border-top: 1px solid rgb(251 250 246 / .18); font-size: .9rem; }
+.foot-bottom p { margin: 0; flex: 1; }
+.foot-bottom ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.foot-bottom .mark { width: 2.5rem; }
+
+@media (min-width: 52rem) {
+  .hero-body { grid-template-columns: 1fr 1.1fr; align-items: center; padding-bottom: 5rem; }
+  .stickers { margin: 0; height: 36rem; }
+  .soup { grid-template-columns: 1fr 1.2fr; }
+  .drinks { grid-template-columns: 1.2fr 1fr; }
+  .place { grid-template-columns: 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1.3fr 1fr 1fr; }
+}
