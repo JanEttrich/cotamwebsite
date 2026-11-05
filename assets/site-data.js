@@ -19,9 +19,11 @@ window.COTAM = {
   instagram: 'https://www.instagram.com/cotam.kl/',
   instagramHandle: '@cotam.kl',
 
-  // Pfad relativ zum Hauptordner der Website
-  // TODO: komprimierte PDF (< 5 MB) aus Canva exportieren und hier verlinken
-  menuPdf: 'resources/Speisekarte.pdf',
+  // Pfad relativ zum Hauptordner der Website.
+  // VORSCHAU: vorerst nur das Deckblatt (1 MB), weil die volle Speisekarte 60 MB groß ist.
+  // TODO zum Livegang: komprimierte PDF (< 5 MB) aus Canva exportieren, hier verlinken
+  //      und die Links in index.html (Fallback ohne JavaScript) ebenfalls anpassen.
+  menuPdf: 'resources/Speisekarte-Vorschau.pdf',
 
   /*
    * Öffnungszeiten. Wochentage: 1 = Montag … 6 = Samstag, 0 = Sonntag.
