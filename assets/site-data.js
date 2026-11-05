@@ -1,11 +1,10 @@
 /*
  * Cô Tâm – zentrale Daten der Website.
  * Hier (und nur hier) Öffnungszeiten, Kontakt und Ankündigungen pflegen.
- * Alle Designs lesen diese Datei.
+ * Wird von assets/site.js gelesen.
  */
 window.COTAM = {
   name: 'Cô Tâm',
-  claim: 'Authentic Vietnamese and Thai Cuisine',
 
   address: {
     street: 'Karl-Marx-Straße 20',
@@ -29,10 +28,10 @@ window.COTAM = {
    * Tage, die nicht vorkommen, gelten als Ruhetag.
    */
   hours: [
-    { label: 'Montag – Donnerstag', short: 'Mo – Do', days: [1, 2, 3, 4], slots: [['11:00', '15:00'], ['17:00', '21:00']] },
-    { label: 'Freitag & Samstag', short: 'Fr & Sa', days: [5, 6], slots: [['11:00', '15:00'], ['17:00', '22:00']] },
+    { label: 'Montag – Donnerstag', days: [1, 2, 3, 4], slots: [['11:00', '15:00'], ['17:00', '21:00']] },
+    { label: 'Freitag & Samstag', days: [5, 6], slots: [['11:00', '15:00'], ['17:00', '22:00']] },
     // TODO: Sonntag bestätigen
-    { label: 'Sonntag', short: 'So', days: [0], slots: [] },
+    { label: 'Sonntag', days: [0], slots: [] },
   ],
 
   /*

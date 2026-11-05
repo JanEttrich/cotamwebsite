@@ -3,43 +3,157 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cô Tâm – Designauswahl</title>
-  <meta name="robots" content="noindex">
-  <link rel="icon" href="shared/img/brand/favicon.png">
-  <link rel="stylesheet" href="shared/fonts/fonts.css">
-  <link rel="stylesheet" href="shared/legal.css">
-  <style>
-    .choices { list-style: none; padding: 0; margin: 2rem 0; display: grid; gap: 1rem; }
-    .choices a { display: grid; grid-template-columns: 5rem 1fr; gap: 1.25rem; align-items: center; padding: 1.25rem; background: #fff; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: inset 0 0 0 1.5px rgb(92 92 52 / .25); }
-    .choices a:hover { box-shadow: inset 0 0 0 2px #5C5C34; }
-    .swatch { height: 5rem; border-radius: 8px; display: grid; grid-template-rows: 2fr 1fr; overflow: hidden; }
-    .choices strong { display: block; font-size: 1.2rem; color: #26261A; }
-    .choices span.desc { font-size: .95rem; }
-  </style>
+  <title>Cô Tâm – Vietnamesische & Thailändische Küche in Kaiserslautern</title>
+  <meta name="description" content="Cô Tâm ist ein familiengeführtes Asia-Bistro in Kaiserslautern: Phở, Bánh Mì, Bún und Thai-Klassiker, gekocht von Vietnamesen aus Saigon. Karl-Marx-Straße 20.">
+  <meta name="theme-color" content="#5C5C34">
+  <link rel="icon" href="assets/img/brand/favicon.png">
+  <link rel="preload" href="assets/fonts/phudu-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/site-data.js" defer></script>
+  <script src="assets/site.js" defer></script>
+  <script src="assets/nav.js" defer></script>
 </head>
 <body>
-  <main class="wrap">
-    <h1>Vier Entwürfe für Cô Tâm</h1>
-    <p>Alle Entwürfe zeigen denselben Inhalt. Öffnen Sie sie nacheinander – auch auf dem Handy – und wählen Sie den, der am besten zum Bistro passt. Diese Seite wird danach durch das gewählte Design ersetzt.</p>
-    <ul class="choices">
-      <li><a href="design-a-olive/">
-        <span class="swatch" style="background:#F1F2E6"><i style="background:#5C5C34"></i><i style="background:#6B231A"></i></span>
-        <span><strong>A – Oliv &amp; Reispapier</strong><span class="desc">Hell und frisch nach dem hellen Logo. Große Schrift im Stil von Straßenschildern, die Phở-Schale im Doppelring des Logos.</span></span>
-      </a></li>
-      <li><a href="design-b-dark/">
-        <span class="swatch" style="background:#000"><i style="background:#000"></i><i style="background:#6B231A"></i></span>
-        <span><strong>B – Saigon bei Nacht</strong><span class="desc">Schwarz und Lack-Rot nach dem dunklen Logo. Gerichte im Laternenlicht, dampfende Suppe, elegante Schrift.</span></span>
-      </a></li>
-      <li><a href="design-c-mixed/">
-        <span class="swatch" style="background:#FBFAF6"><i style="background:#6B231A"></i><i style="background:#000"></i></span>
-        <span><strong>C – Gemischt</strong><span class="desc">Roter Kopfbereich mit Gerichten als Sticker, helle Mitte, Oliv- und Kondensmilch-Abschnitte, schwarzer Fußbereich.</span></span>
-      </a></li>
-      <li><a href="design-d/">
-        <span class="swatch" style="background:#F1F2E6"><i style="background:#5C5C34"></i><i style="background:#E3E5CF"></i></span>
-        <span><strong>D – Oliv mit Gericht-Galerie</strong><span class="desc">Entwurf A mit der Gericht-Galerie aus Entwurf B, ohne Öffnungsstatus und ohne Kategorienliste – die Speisekarte gibt es direkt als PDF.</span></span>
-      </a></li>
-    </ul>
-    <p><a href="impressum.html">Impressum</a> – <a href="datenschutz.html">Datenschutz</a></p>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <aside class="notice" data-announcement hidden>
+    <p data-announcement-text></p>
+  </aside>
+
+  <header class="top-bar">
+    <div class="top">
+      <a class="brand" href="#inhalt" aria-label="Cô Tâm – zum Seitenanfang">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Cô Tâm</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnav">
+        <span class="bars" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menü</span>
+      </button>
+      <nav class="main-nav" id="hauptnav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#gerichte">Gerichte</a></li>
+          <li><a href="#getraenke">Kaffee &amp; Matcha</a></li>
+          <li><a href="#bistro">Das Bistro</a></li>
+          <li><a href="#besuch">Öffnungszeiten &amp; Anfahrt</a></li>
+          <li class="nav-pdf"><a data-menu-pdf href="resources/Speisekarte.pdf" target="_blank" rel="noopener">Speisekarte (PDF)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Phở, Bánh Mì und Bún – wie in Saigon.</h1>
+        <p class="lede">Cô Tâm ist ein kleines, familiengeführtes Bistro in der Karl-Marx-Straße. Wir kochen vietnamesisch und thailändisch, mit hausgemachten Brühen und vielen frischen Kräutern.</p>
+        <div class="actions">
+          <a class="btn btn-solid" data-menu-pdf href="resources/Speisekarte.pdf" target="_blank" rel="noopener">Speisekarte öffnen (PDF)</a>
+          <a class="btn btn-line" data-maps href="#" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <figure class="hero-bowl">
+        <img src="assets/img/food/pho-bo.webp" width="688" height="485" alt="Eine Schale Phở Bò mit Rinderfilet, Zwiebeln, Chili und Kräutern, daneben Stäbchen" loading="lazy">
+        <img class="leaf" src="assets/img/food/basilikum.webp" width="900" height="602" alt="" aria-hidden="true" loading="lazy">
+        <figcaption>Phở Bò – unsere Signature-Suppe</figcaption>
+      </figure>
+    </section>
+
+    <section class="dishes" id="gerichte" aria-labelledby="dishes-title">
+      <header class="section-head">
+        <h2 id="dishes-title">Unsere Lieblinge</h2>
+        <p>Eine kleine Auswahl aus unserer Karte.</p>
+      </header>
+      <ul class="dish-grid">
+        <li class="dish">
+          <img src="assets/img/food/bun-bo-hue.webp" width="807" height="777" alt="Bún Bò Huế: rote, würzige Nudelsuppe mit Rindfleisch und Kräutern" loading="lazy">
+          <h3>Phở &amp; Bún Bò Huế</h3>
+          <p>Hausgemachte Brühen mit Reisnudeln, Limette, Sprossen und Kräutern. Phở mild und klar, Bún Bò Huế würzig-scharf.</p>
+        </li>
+        <li class="dish">
+          <img src="assets/img/food/banh-mi.webp" width="900" height="537" alt="Bánh Mì: knuspriges Baguette mit Fleisch, Gemüse und Koriander" loading="lazy">
+          <h3>Bánh Mì</h3>
+          <p>Knuspriges Baguette mit hausgemachter Paté, Gemüse und Kräutern – mit Tofu, Schweinebauch oder Xá-Xíu.</p>
+        </li>
+        <li class="dish">
+          <img src="assets/img/food/bun-bo-nam-bo.webp" width="510" height="520" alt="Bún Bò Nam Bộ: Reisnudeln mit gebratenem Rindfleisch, Kräutern und Erdnüssen" loading="lazy">
+          <h3>Bún</h3>
+          <p>Reisnudeln mit Gegrilltem oder Gebratenem, frischem Gemüse, Erdnüssen und Fischsoße.</p>
+        </li>
+        <li class="dish">
+          <img src="assets/img/food/com-tam.webp" width="527" height="491" alt="Cơm Tấm: Reis mit gegrilltem Fleisch, Spiegelei und Gemüse" loading="lazy">
+          <h3>Cơm Tấm</h3>
+          <p>Duftreis mit Hähnchen und Schweinefleisch, Ei, frischem Gemüse und würziger Fischsauce.</p>
+        </li>
+        <li class="dish">
+          <img src="assets/img/food/gruenes-curry.webp" width="512" height="383" alt="Grünes Thai-Curry mit knusprigem Hähnchen im Topf" loading="lazy">
+          <h3>Thai-Curry</h3>
+          <p>Grün oder rot, cremig mit Kokosmilch und Gemüse – mit Tofu, Hähnchen, Ente oder Garnelen.</p>
+        </li>
+        <li class="dish">
+          <img src="assets/img/food/mango-sticky-rice.webp" width="900" height="496" alt="Mango Sticky Rice: Klebreis mit Kokosmilch und Mangostücken" loading="lazy">
+          <h3>Mango Sticky Rice</h3>
+          <p>Süßer Klebreis mit cremiger Kokosmilch und frischer Mango.</p>
+        </li>
+      </ul>
+      <p class="veg"><span aria-hidden="true">🌱</span> Viele Gerichte bekommen Sie auch vegetarisch mit Tofu.</p>
+    </section>
+
+    <section class="drinks" id="getraenke" aria-labelledby="drinks-title">
+      <div class="drinks-art">
+        <img src="assets/img/art/phin.svg" width="600" height="600" alt="Illustration eines Phin-Filters, der Kaffee auf Eis und Kondensmilch tropft" loading="lazy">
+      </div>
+      <div class="drinks-text">
+        <h2 id="drinks-title">Kaffee aus dem Phin, Matcha mit Frucht</h2>
+        <p><strong>Cà Phê Sữa Đá</strong> ist vietnamesischer Eiskaffee: Der Kaffee tropft langsam durch den Phin-Filter auf gesüßte Kondensmilch und Eis. Heiß gibt es ihn als Cà Phê Phin.</p>
+        <p>Unsere <strong>Matcha Lattes</strong> machen wir pur oder mit Erdbeere, Mango, Blaubeere, Pfirsich und Kokos.</p>
+      </div>
+    </section>
+
+    <section class="place" id="bistro" aria-labelledby="place-title">
+      <h2 id="place-title" class="visually-hidden">Das Bistro</h2>
+      <figure>
+        <img src="assets/img/art/aussen.svg" width="800" height="600" alt="Illustration: das Bistro von außen mit gestreifter Markise und roten Laternen" loading="lazy">
+        <figcaption>Karl-Marx-Straße 20 <span>(Illustration – Fotos folgen)</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/art/innen.svg" width="800" height="600" alt="Illustration: der Gastraum mit Laternen, Hüten an der Wand und Holztischen" loading="lazy">
+        <figcaption>Unser Gastraum <span>(Illustration – Fotos folgen)</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="visit" id="besuch" aria-labelledby="visit-title">
+      <h2 id="visit-title">Besuchen Sie uns</h2>
+      <div class="visit-grid">
+        <div class="visit-hours">
+          <h3>Öffnungszeiten</h3>
+          <dl class="hours" data-hours></dl>
+          <p class="hours-note">Mittagspause von 15 bis 17 Uhr.</p>
+        </div>
+        <div class="visit-contact">
+          <h3>Adresse</h3>
+          <p data-address>Karl-Marx-Straße 20<br>67655 Kaiserslautern</p>
+          <p><a class="link" data-maps href="#" target="_blank" rel="noopener">In Google Maps öffnen</a></p>
+          <h3>Kontakt</h3>
+          <ul class="contact-list">
+            <li><a class="link" data-phone href="#">Telefon</a></li>
+            <li><a class="link" data-email href="#">E-Mail</a></li>
+            <li><a class="link" data-instagram href="https://www.instagram.com/cotam.kl/" target="_blank" rel="noopener">Instagram <span data-instagram-handle>@cotam.kl</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="foot">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <p>© <span data-year>2026</span> Cô Tâm – Asia-Bistro in Kaiserslautern</p>
+    <ul>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+  </footer>
 </body>
 </html>

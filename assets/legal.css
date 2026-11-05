@@ -1,5 +1,5 @@
-/* Neutrales Layout für Impressum & Datenschutz (wird nach der Designwahl angepasst). */
-:root { --olive: #5C5C34; --oxblood: #6B231A; --paper: #F7F7F0; --ink: #26261A; }
+/* Impressum & Datenschutz – gleiche Farben und Schriften wie die Startseite. */
+:root { --olive: #5C5C34; --oxblood: #6B231A; --paper: #F1F2E6; --ink: #26261A; }
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.7 'Be Vietnam Pro', system-ui, sans-serif; }
 .wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }

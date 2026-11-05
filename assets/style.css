@@ -1,5 +1,5 @@
-/* Design D – Design A ("Chợ") mit der Gericht-Galerie aus Design B.
-   Reispapier, Oliv & Ochsenblut. Signage-Typo (Phudu) + Be Vietnam Pro.
+/* Cô Tâm – Stylesheet der Startseite.
+   Reispapier, Oliv & Ochsenblut (Logofarben). Phudu für Überschriften, Be Vietnam Pro für Text.
    Mobile-first: Basisregeln gelten fürs Handy, größere Bildschirme ab 48rem bzw. 60rem. */
 :root {
   --paper: #F1F2E6;
@@ -23,7 +23,7 @@
   --max: 72rem;
   --bleed: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter))); /* Innenabstand vollflächiger Bänder */
   --bar-h: 4.25rem;
-  --logo: url('../shared/img/brand/logo-weiss.webp');
+  --logo: url('img/brand/logo-weiss.webp');
 }
 
 *, *::before, *::after { box-sizing: border-box; }
